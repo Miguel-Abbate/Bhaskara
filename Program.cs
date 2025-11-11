@@ -41,21 +41,25 @@ while (true)
 }
 Delta = (B * B) - (4 * A * C);
 Raiz = Math.Sqrt(Delta);
-string Deltafor = Delta.ToString("F2");
 
-Console.WriteLine($"Delta...:{Deltafor}");
+
+Console.WriteLine($"Delta...:{Delta:N2}");
 if (Delta < 0)
 {
     Console.WriteLine("Não existem raizes reais");
 }
-else
+else if(Delta==0)
 {
     X1 = (-B + Raiz) / (2 * A);
-    X2 = (-B - Raiz) / (2 * A);
-    string Raizfor = Raiz.ToString("F2");
-    string X1for = X1.ToString("F2");
-    string X2for = X2.ToString("F2");
-    Console.WriteLine($"Raiz de Delta...:{Raizfor}");
-    Console.WriteLine($"X1...:{X1for}");
-    Console.WriteLine($"X2...:{X2for}");
+    Console.WriteLine($"Delta =0 , Valores de X1 e X2 são iguais...{X1}");
+
 }
+else
+        {
+            X1 = (-B + Raiz) / (2 * A);
+            X2 = (-B - Raiz) / (2 * A);
+            
+            Console.WriteLine($"Raiz de Delta...:{Raiz:N2}");
+            Console.WriteLine($"X1...:{X1:N2}");
+            Console.WriteLine($"X2...:{X2:N2}");
+        }
